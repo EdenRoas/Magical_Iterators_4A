@@ -47,8 +47,17 @@ namespace ariel
     {
         return 1;
     }
-    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() const {return MagicalContainer::AscendingIterator(container);}
-    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() const {  return AscendingIterator(container);}
+    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::begin() const 
+    {   
+         return AscendingIterator(container);
+
+        return MagicalContainer::AscendingIterator(container);
+    }
+    MagicalContainer::AscendingIterator MagicalContainer::AscendingIterator::end() const {      
+        AscendingIterator nums(container);
+        nums.index = container.size();  // Set index to the size of the set
+        return nums;
+    ;}
     bool MagicalContainer::AscendingIterator::operator>(const AscendingIterator &other) const 
     {
         return true;

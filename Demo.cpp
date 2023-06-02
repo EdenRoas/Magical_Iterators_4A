@@ -20,7 +20,7 @@ int main() {
         std::cout << *it << ' ';   // 2 3 9 17 25
     }
     std::cout << std::endl;
-
+    //std::cout << "********************* F1**************";
     // Use DescendingIterator to display elements in descending order
     std::cout << "Elements in cross order:\n";
     MagicalContainer::SideCrossIterator crossIter(container);
