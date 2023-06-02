@@ -68,11 +68,11 @@ namespace ariel
     }
     bool MagicalContainer::AscendingIterator::operator==(const AscendingIterator &other) const 
     {
-        return true;
+        return index == other.index;
     }
     bool MagicalContainer::AscendingIterator::operator!=(const AscendingIterator &other) const 
     {
-        return true;
+        return !(*this == other);
     }
     MagicalContainer::AscendingIterator &MagicalContainer::AscendingIterator::operator=(const AscendingIterator &other) 
     {
@@ -96,8 +96,16 @@ namespace ariel
     MagicalContainer::SideCrossIterator MagicalContainer::SideCrossIterator::end() const { return SideCrossIterator(container,0,0); }
     bool MagicalContainer::SideCrossIterator::operator>(const SideCrossIterator &other) const {return true;}
     bool MagicalContainer::SideCrossIterator::operator<(const SideCrossIterator &other) const {return true;}
-    bool MagicalContainer::SideCrossIterator::operator==(const SideCrossIterator &other) const {return true;}
-    bool MagicalContainer::SideCrossIterator::operator!=(const SideCrossIterator &other) const {return true;}
+    bool MagicalContainer::SideCrossIterator::operator==(const SideCrossIterator &other) const 
+    {
+        return true;
+
+    }
+    bool MagicalContainer::SideCrossIterator::operator!=(const SideCrossIterator &other) const 
+    {
+          return !(*this == other);
+;
+    }
     MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator=(const SideCrossIterator &other) { return *this;}
     MagicalContainer::SideCrossIterator &MagicalContainer::SideCrossIterator::operator++() {return *this;}
 
@@ -121,8 +129,14 @@ namespace ariel
     MagicalContainer::PrimeIterator MagicalContainer::PrimeIterator::end() const {return PrimeIterator(container);}
     bool MagicalContainer::PrimeIterator::operator>(const PrimeIterator &other) const {return true;}
     bool MagicalContainer::PrimeIterator::operator<(const PrimeIterator &other) const {return true;}
-    bool MagicalContainer::PrimeIterator::operator==(const PrimeIterator &other) const {return true;}
-    bool MagicalContainer::PrimeIterator::operator!=(const PrimeIterator &other) const {return true;}
+    bool MagicalContainer::PrimeIterator::operator==(const PrimeIterator &other) const 
+    {
+        return index == other.index;
+    }
+    bool MagicalContainer::PrimeIterator::operator!=(const PrimeIterator &other) const 
+    {
+        return !(*this == other);
+    }
     MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator=(const PrimeIterator &other) {return *this;}
     MagicalContainer::PrimeIterator &MagicalContainer::PrimeIterator::operator++() { return *this;}
 }
