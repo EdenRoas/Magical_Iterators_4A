@@ -45,16 +45,16 @@ TEST_CASE("AscendingIteratorTest") {
     CHECK_FALSE(ascIter.begin() == ascIter.end());
 
     auto num = ascIter.begin();
-    CHECK_EQ(num, 1);
+    CHECK_EQ(*num, 1);
     CHECK_NOTHROW(++num);
-    CHECK_EQ(num, 4);
+    CHECK_EQ(*num, 4);
     CHECK_NOTHROW(++num);
-    CHECK_EQ(num, 9);
+    CHECK_EQ(*num, 9);
     CHECK_THROWS(++num);
-    CHECK_EQ(num, 13);
+    CHECK_EQ(*num, 13);
 
 }
-   
+
 
 TEST_CASE("SideCrossIteratorTest") {
     MagicalContainer container;
@@ -73,17 +73,17 @@ TEST_CASE("SideCrossIteratorTest") {
     CHECK_FALSE(sidCrIter.begin() == sidCrIter.end());
 
     auto num = sidCrIter.begin();
-    CHECK_EQ(num, 1);
+    CHECK_EQ(*num, 1);
     CHECK_NOTHROW(++num);
-    CHECK_EQ(num, 9);
+    CHECK_EQ(*num, 9);
     CHECK_NOTHROW(++num);
-    CHECK_EQ(num, 4);
+    CHECK_EQ(*num, 4);
     CHECK_THROWS(++num);
-    CHECK_EQ(num, 13);
+    CHECK_EQ(*num, 13);
     CHECK_THROWS(++num);
-    CHECK_EQ(num, 15);
+    CHECK_EQ(*num, 15);
     CHECK_THROWS(++num);
-    CHECK_EQ(num, 17);
+    CHECK_EQ(*num, 17);
 
 
 }
@@ -103,9 +103,9 @@ TEST_CASE("PrimeIteratorTest") {
     CHECK_FALSE(*primIter.begin() == *primIter.end());
 
     auto num = primIter.begin();
-    CHECK_EQ(num, 17);
+    CHECK_EQ(*num, 17);
     CHECK_NOTHROW(++num);
-    CHECK_EQ(num, 13);
+    CHECK_EQ(*num, 13);
     CHECK_THROWS(++num);
 
 
